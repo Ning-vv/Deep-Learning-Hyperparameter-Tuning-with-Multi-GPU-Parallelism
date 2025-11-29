@@ -1,0 +1,5 @@
+/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/impl/tuner_internal.py:144: RayDeprecationWarning: The `RunConfig` class should be imported from `ray.tune` when passing it to the Tuner. Please update your imports. See this issue for more context and migration options: https://github.com/ray-project/ray/issues/49454. Disable these warnings by setting the environment variable: RAY_TRAIN_ENABLE_V2_MIGRATION_WARNINGS=0
+  _log_deprecation_warning(
+2025-11-29 14:59:01,781	INFO worker.py:1951 -- Started a local Ray instance.
+2025-11-29 14:59:05,738	INFO tune.py:253 -- Initializing Ray automatically. For cluster usage or custom Ray initialization, call `ray.init(...)` before `Tuner(...)`.
+2025-11-29 15:14:07,638	INFO tune.py:1009 -- Wrote the latest version of all result files and experiment state to '/global/u2/y/yuning88/rl-hyper-tuning/ray_results/pathmnist_resnet18_tune' in 0.0351s.

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/global/u2/y/yuning88/rl-hyper-tuning/train_tune.py", line 97, in <module>
+    run_config=air.RunConfig(local_dir="ray_results"),
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 15, in __init__
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/air/config.py", line 591, in __post_init__
+    raise DeprecationWarning(
+DeprecationWarning: The `RunConfig(local_dir)` argument is deprecated. You should set the `RunConfig(storage_path)` instead.See the docs: https://docs.ray.io/en/latest/train/user-guides/persistent-storage.html#setting-the-local-staging-directory
+srun: error: nid001832: task 0: Exited with exit code 1
+srun: Terminating StepId=45820744.0

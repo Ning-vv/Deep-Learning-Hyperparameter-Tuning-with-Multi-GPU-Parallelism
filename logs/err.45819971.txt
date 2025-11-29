@@ -1,0 +1,13 @@
+/var/spool/slurmd/job45819971/slurm_script: line 13: ·: command not found
+
+The following have been reloaded with a version change:
+  1) cudatoolkit/12.4 => cudatoolkit/12.9
+
+Traceback (most recent call last):
+  File "/global/u2/y/yuning88/rl-hyper-tuning/train_tune.py", line 10, in <module>
+    from dataset import get_dataloaders, N_CLASSES
+  File "/global/u2/y/yuning88/rl-hyper-tuning/dataset.py", line 5, in <module>
+    import medmnist
+ModuleNotFoundError: No module named 'medmnist'
+srun: error: nid003492: task 0: Exited with exit code 1
+srun: Terminating StepId=45819971.0

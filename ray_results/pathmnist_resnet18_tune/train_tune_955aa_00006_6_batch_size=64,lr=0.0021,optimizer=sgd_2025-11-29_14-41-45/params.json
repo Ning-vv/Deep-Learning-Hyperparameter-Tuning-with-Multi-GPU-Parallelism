@@ -1,0 +1,6 @@
+{
+  "batch_size": 64,
+  "epochs": 8,
+  "lr": 0.002124546814105388,
+  "optimizer": "sgd"
+}

@@ -1,0 +1,345 @@
+╭────────────────────────────────────────────────────────────╮
+│ Configuration for experiment     pathmnist_resnet18_tune   │
+├────────────────────────────────────────────────────────────┤
+│ Search algorithm                 BasicVariantGenerator     │
+│ Scheduler                        AsyncHyperBandScheduler   │
+│ Number of trials                 12                        │
+╰────────────────────────────────────────────────────────────╯
+
+View detailed results here: /global/u2/y/yuning88/rl-hyper-tuning/ray_results/pathmnist_resnet18_tune
+To visualize your results with TensorBoard, run: `tensorboard --logdir /tmp/ray/session_2025-11-29_14-41-37_476696_660514/artifacts/2025-11-29_14-41-45/pathmnist_resnet18_tune/driver_artifacts`
+
+Trial status: 12 PENDING
+Current time: 2025-11-29 14:41:45. Total running time: 0s
+Logical resource usage: 0/128 CPUs, 0/4 GPUs (0.0/1.0 accelerator_type:A100)
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ Trial name               status              lr     batch_size   optimizer   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│ train_tune_955aa_00000   PENDING    0.000239815             32   adam        │
+│ train_tune_955aa_00001   PENDING    0.00562858              64   adam        │
+│ train_tune_955aa_00002   PENDING    0.00987422             128   sgd         │
+│ train_tune_955aa_00003   PENDING    0.000580551             32   sgd         │
+│ train_tune_955aa_00004   PENDING    0.000357218             32   sgd         │
+│ train_tune_955aa_00005   PENDING    0.00693229             128   adam        │
+│ train_tune_955aa_00006   PENDING    0.00212455              64   sgd         │
+│ train_tune_955aa_00007   PENDING    0.000470091            128   sgd         │
+│ train_tune_955aa_00008   PENDING    0.00293409             128   sgd         │
+│ train_tune_955aa_00009   PENDING    0.00675505              64   sgd         │
+│ train_tune_955aa_00010   PENDING    0.00338379              32   adam        │
+│ train_tune_955aa_00011   PENDING    0.000257238             64   sgd         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Trial train_tune_955aa_00002 started with configuration:
+╭─────────────────────────────────────────────────╮
+│ Trial train_tune_955aa_00002 config             │
+├─────────────────────────────────────────────────┤
+│ batch_size                                  128 │
+│ epochs                                        8 │
+│ lr                                      0.00987 │
+│ optimizer                                   sgd │
+╰─────────────────────────────────────────────────╯
+
+Trial train_tune_955aa_00000 started with configuration:
+╭─────────────────────────────────────────────────╮
+│ Trial train_tune_955aa_00000 config             │
+├─────────────────────────────────────────────────┤
+│ batch_size                                   32 │
+│ epochs                                        8 │
+│ lr                                      0.00024 │
+│ optimizer                                  adam │
+╰─────────────────────────────────────────────────╯
+
+Trial train_tune_955aa_00001 started with configuration:
+╭─────────────────────────────────────────────────╮
+│ Trial train_tune_955aa_00001 config             │
+├─────────────────────────────────────────────────┤
+│ batch_size                                   64 │
+│ epochs                                        8 │
+│ lr                                      0.00563 │
+│ optimizer                                  adam │
+╰─────────────────────────────────────────────────╯
+
+Trial train_tune_955aa_00003 started with configuration:
+╭─────────────────────────────────────────────────╮
+│ Trial train_tune_955aa_00003 config             │
+├─────────────────────────────────────────────────┤
+│ batch_size                                   32 │
+│ epochs                                        8 │
+│ lr                                      0.00058 │
+│ optimizer                                   sgd │
+╰─────────────────────────────────────────────────╯
+
+Trial status: 4 RUNNING | 8 PENDING
+Current time: 2025-11-29 14:42:15. Total running time: 30s
+Logical resource usage: 16.0/128 CPUs, 4.0/4 GPUs (0.0/1.0 accelerator_type:A100)
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ Trial name               status              lr     batch_size   optimizer   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│ train_tune_955aa_00000   RUNNING    0.000239815             32   adam        │
+│ train_tune_955aa_00001   RUNNING    0.00562858              64   adam        │
+│ train_tune_955aa_00002   RUNNING    0.00987422             128   sgd         │
+│ train_tune_955aa_00003   RUNNING    0.000580551             32   sgd         │
+│ train_tune_955aa_00004   PENDING    0.000357218             32   sgd         │
+│ train_tune_955aa_00005   PENDING    0.00693229             128   adam        │
+│ train_tune_955aa_00006   PENDING    0.00212455              64   sgd         │
+│ train_tune_955aa_00007   PENDING    0.000470091            128   sgd         │
+│ train_tune_955aa_00008   PENDING    0.00293409             128   sgd         │
+│ train_tune_955aa_00009   PENDING    0.00675505              64   sgd         │
+│ train_tune_955aa_00010   PENDING    0.00338379              32   adam        │
+│ train_tune_955aa_00011   PENDING    0.000257238             64   sgd         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Trial train_tune_955aa_00002 errored after 0 iterations at 2025-11-29 14:42:44. Total running time: 58s
+Error file: /tmp/ray/session_2025-11-29_14-41-37_476696_660514/artifacts/2025-11-29_14-41-45/pathmnist_resnet18_tune/driver_artifacts/train_tune_955aa_00002_2_batch_size=128,lr=0.0099,optimizer=sgd_2025-11-29_14-41-45/error.txt
+
+Trial status: 3 RUNNING | 1 ERROR | 8 PENDING
+Current time: 2025-11-29 14:42:45. Total running time: 1min 0s
+Logical resource usage: 16.0/128 CPUs, 4.0/4 GPUs (0.0/1.0 accelerator_type:A100)
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ Trial name               status              lr     batch_size   optimizer   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│ train_tune_955aa_00000   RUNNING    0.000239815             32   adam        │
+│ train_tune_955aa_00001   RUNNING    0.00562858              64   adam        │
+│ train_tune_955aa_00003   RUNNING    0.000580551             32   sgd         │
+│ train_tune_955aa_00004   PENDING    0.000357218             32   sgd         │
+│ train_tune_955aa_00005   PENDING    0.00693229             128   adam        │
+│ train_tune_955aa_00006   PENDING    0.00212455              64   sgd         │
+│ train_tune_955aa_00007   PENDING    0.000470091            128   sgd         │
+│ train_tune_955aa_00008   PENDING    0.00293409             128   sgd         │
+│ train_tune_955aa_00009   PENDING    0.00675505              64   sgd         │
+│ train_tune_955aa_00010   PENDING    0.00338379              32   adam        │
+│ train_tune_955aa_00011   PENDING    0.000257238             64   sgd         │
+│ train_tune_955aa_00002   ERROR      0.00987422             128   sgd         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Trial train_tune_955aa_00001 errored after 0 iterations at 2025-11-29 14:42:46. Total running time: 1min 1s
+Error file: /tmp/ray/session_2025-11-29_14-41-37_476696_660514/artifacts/2025-11-29_14-41-45/pathmnist_resnet18_tune/driver_artifacts/train_tune_955aa_00001_1_batch_size=64,lr=0.0056,optimizer=adam_2025-11-29_14-41-45/error.txt
+
+Trial train_tune_955aa_00003 errored after 0 iterations at 2025-11-29 14:42:49. Total running time: 1min 4s
+Error file: /tmp/ray/session_2025-11-29_14-41-37_476696_660514/artifacts/2025-11-29_14-41-45/pathmnist_resnet18_tune/driver_artifacts/train_tune_955aa_00003_3_batch_size=32,lr=0.0006,optimizer=sgd_2025-11-29_14-41-45/error.txt
+
+Trial train_tune_955aa_00000 errored after 0 iterations at 2025-11-29 14:42:50. Total running time: 1min 5s
+Error file: /tmp/ray/session_2025-11-29_14-41-37_476696_660514/artifacts/2025-11-29_14-41-45/pathmnist_resnet18_tune/driver_artifacts/train_tune_955aa_00000_0_batch_size=32,lr=0.0002,optimizer=adam_2025-11-29_14-41-45/error.txt
+
+Trial train_tune_955aa_00004 started with configuration:
+╭─────────────────────────────────────────────────╮
+│ Trial train_tune_955aa_00004 config             │
+├─────────────────────────────────────────────────┤
+│ batch_size                                   32 │
+│ epochs                                        8 │
+│ lr                                      0.00036 │
+│ optimizer                                   sgd │
+╰─────────────────────────────────────────────────╯
+
+Trial train_tune_955aa_00005 started with configuration:
+╭─────────────────────────────────────────────────╮
+│ Trial train_tune_955aa_00005 config             │
+├─────────────────────────────────────────────────┤
+│ batch_size                                  128 │
+│ epochs                                        8 │
+│ lr                                      0.00693 │
+│ optimizer                                  adam │
+╰─────────────────────────────────────────────────╯
+
+Trial train_tune_955aa_00006 started with configuration:
+╭─────────────────────────────────────────────────╮
+│ Trial train_tune_955aa_00006 config             │
+├─────────────────────────────────────────────────┤
+│ batch_size                                   64 │
+│ epochs                                        8 │
+│ lr                                      0.00212 │
+│ optimizer                                   sgd │
+╰─────────────────────────────────────────────────╯
+
+Trial train_tune_955aa_00007 started with configuration:
+╭─────────────────────────────────────────────────╮
+│ Trial train_tune_955aa_00007 config             │
+├─────────────────────────────────────────────────┤
+│ batch_size                                  128 │
+│ epochs                                        8 │
+│ lr                                      0.00047 │
+│ optimizer                                   sgd │
+╰─────────────────────────────────────────────────╯
+
+Trial status: 4 ERROR | 4 RUNNING | 4 PENDING
+Current time: 2025-11-29 14:43:15. Total running time: 1min 30s
+Logical resource usage: 16.0/128 CPUs, 4.0/4 GPUs (0.0/1.0 accelerator_type:A100)
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ Trial name               status              lr     batch_size   optimizer   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│ train_tune_955aa_00004   RUNNING    0.000357218             32   sgd         │
+│ train_tune_955aa_00005   RUNNING    0.00693229             128   adam        │
+│ train_tune_955aa_00006   RUNNING    0.00212455              64   sgd         │
+│ train_tune_955aa_00007   RUNNING    0.000470091            128   sgd         │
+│ train_tune_955aa_00008   PENDING    0.00293409             128   sgd         │
+│ train_tune_955aa_00009   PENDING    0.00675505              64   sgd         │
+│ train_tune_955aa_00010   PENDING    0.00338379              32   adam        │
+│ train_tune_955aa_00011   PENDING    0.000257238             64   sgd         │
+│ train_tune_955aa_00000   ERROR      0.000239815             32   adam        │
+│ train_tune_955aa_00001   ERROR      0.00562858              64   adam        │
+│ train_tune_955aa_00002   ERROR      0.00987422             128   sgd         │
+│ train_tune_955aa_00003   ERROR      0.000580551             32   sgd         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Trial train_tune_955aa_00005 errored after 0 iterations at 2025-11-29 14:43:41. Total running time: 1min 55s
+Error file: /tmp/ray/session_2025-11-29_14-41-37_476696_660514/artifacts/2025-11-29_14-41-45/pathmnist_resnet18_tune/driver_artifacts/train_tune_955aa_00005_5_batch_size=128,lr=0.0069,optimizer=adam_2025-11-29_14-41-45/error.txt
+
+Trial train_tune_955aa_00007 errored after 0 iterations at 2025-11-29 14:43:44. Total running time: 1min 59s
+Error file: /tmp/ray/session_2025-11-29_14-41-37_476696_660514/artifacts/2025-11-29_14-41-45/pathmnist_resnet18_tune/driver_artifacts/train_tune_955aa_00007_7_batch_size=128,lr=0.0005,optimizer=sgd_2025-11-29_14-41-45/error.txt
+
+Trial train_tune_955aa_00004 errored after 0 iterations at 2025-11-29 14:43:44. Total running time: 1min 59s
+Error file: /tmp/ray/session_2025-11-29_14-41-37_476696_660514/artifacts/2025-11-29_14-41-45/pathmnist_resnet18_tune/driver_artifacts/train_tune_955aa_00004_4_batch_size=32,lr=0.0004,optimizer=sgd_2025-11-29_14-41-45/error.txt
+
+Trial train_tune_955aa_00006 errored after 0 iterations at 2025-11-29 14:43:45. Total running time: 1min 59s
+Error file: /tmp/ray/session_2025-11-29_14-41-37_476696_660514/artifacts/2025-11-29_14-41-45/pathmnist_resnet18_tune/driver_artifacts/train_tune_955aa_00006_6_batch_size=64,lr=0.0021,optimizer=sgd_2025-11-29_14-41-45/error.txt
+
+Trial status: 8 ERROR | 4 PENDING
+Current time: 2025-11-29 14:43:45. Total running time: 2min 0s
+Logical resource usage: 16.0/128 CPUs, 4.0/4 GPUs (0.0/1.0 accelerator_type:A100)
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ Trial name               status              lr     batch_size   optimizer   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│ train_tune_955aa_00008   PENDING    0.00293409             128   sgd         │
+│ train_tune_955aa_00009   PENDING    0.00675505              64   sgd         │
+│ train_tune_955aa_00010   PENDING    0.00338379              32   adam        │
+│ train_tune_955aa_00011   PENDING    0.000257238             64   sgd         │
+│ train_tune_955aa_00000   ERROR      0.000239815             32   adam        │
+│ train_tune_955aa_00001   ERROR      0.00562858              64   adam        │
+│ train_tune_955aa_00002   ERROR      0.00987422             128   sgd         │
+│ train_tune_955aa_00003   ERROR      0.000580551             32   sgd         │
+│ train_tune_955aa_00004   ERROR      0.000357218             32   sgd         │
+│ train_tune_955aa_00005   ERROR      0.00693229             128   adam        │
+│ train_tune_955aa_00006   ERROR      0.00212455              64   sgd         │
+│ train_tune_955aa_00007   ERROR      0.000470091            128   sgd         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Trial train_tune_955aa_00008 started with configuration:
+╭─────────────────────────────────────────────────╮
+│ Trial train_tune_955aa_00008 config             │
+├─────────────────────────────────────────────────┤
+│ batch_size                                  128 │
+│ epochs                                        8 │
+│ lr                                      0.00293 │
+│ optimizer                                   sgd │
+╰─────────────────────────────────────────────────╯
+
+Trial train_tune_955aa_00010 started with configuration:
+╭─────────────────────────────────────────────────╮
+│ Trial train_tune_955aa_00010 config             │
+├─────────────────────────────────────────────────┤
+│ batch_size                                   32 │
+│ epochs                                        8 │
+│ lr                                      0.00338 │
+│ optimizer                                  adam │
+╰─────────────────────────────────────────────────╯
+
+Trial train_tune_955aa_00011 started with configuration:
+╭─────────────────────────────────────────────────╮
+│ Trial train_tune_955aa_00011 config             │
+├─────────────────────────────────────────────────┤
+│ batch_size                                   64 │
+│ epochs                                        8 │
+│ lr                                      0.00026 │
+│ optimizer                                   sgd │
+╰─────────────────────────────────────────────────╯
+
+Trial train_tune_955aa_00009 started with configuration:
+╭─────────────────────────────────────────────────╮
+│ Trial train_tune_955aa_00009 config             │
+├─────────────────────────────────────────────────┤
+│ batch_size                                   64 │
+│ epochs                                        8 │
+│ lr                                      0.00676 │
+│ optimizer                                   sgd │
+╰─────────────────────────────────────────────────╯
+
+Trial status: 8 ERROR | 4 RUNNING
+Current time: 2025-11-29 14:44:15. Total running time: 2min 30s
+Logical resource usage: 16.0/128 CPUs, 4.0/4 GPUs (0.0/1.0 accelerator_type:A100)
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ Trial name               status              lr     batch_size   optimizer   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│ train_tune_955aa_00008   RUNNING    0.00293409             128   sgd         │
+│ train_tune_955aa_00009   RUNNING    0.00675505              64   sgd         │
+│ train_tune_955aa_00010   RUNNING    0.00338379              32   adam        │
+│ train_tune_955aa_00011   RUNNING    0.000257238             64   sgd         │
+│ train_tune_955aa_00000   ERROR      0.000239815             32   adam        │
+│ train_tune_955aa_00001   ERROR      0.00562858              64   adam        │
+│ train_tune_955aa_00002   ERROR      0.00987422             128   sgd         │
+│ train_tune_955aa_00003   ERROR      0.000580551             32   sgd         │
+│ train_tune_955aa_00004   ERROR      0.000357218             32   sgd         │
+│ train_tune_955aa_00005   ERROR      0.00693229             128   adam        │
+│ train_tune_955aa_00006   ERROR      0.00212455              64   sgd         │
+│ train_tune_955aa_00007   ERROR      0.000470091            128   sgd         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Trial train_tune_955aa_00008 errored after 0 iterations at 2025-11-29 14:44:39. Total running time: 2min 53s
+Error file: /tmp/ray/session_2025-11-29_14-41-37_476696_660514/artifacts/2025-11-29_14-41-45/pathmnist_resnet18_tune/driver_artifacts/train_tune_955aa_00008_8_batch_size=128,lr=0.0029,optimizer=sgd_2025-11-29_14-41-45/error.txt
+
+Trial train_tune_955aa_00009 errored after 0 iterations at 2025-11-29 14:44:42. Total running time: 2min 57s
+Error file: /tmp/ray/session_2025-11-29_14-41-37_476696_660514/artifacts/2025-11-29_14-41-45/pathmnist_resnet18_tune/driver_artifacts/train_tune_955aa_00009_9_batch_size=64,lr=0.0068,optimizer=sgd_2025-11-29_14-41-45/error.txt
+
+Trial train_tune_955aa_00011 errored after 0 iterations at 2025-11-29 14:44:43. Total running time: 2min 58s
+Error file: /tmp/ray/session_2025-11-29_14-41-37_476696_660514/artifacts/2025-11-29_14-41-45/pathmnist_resnet18_tune/driver_artifacts/train_tune_955aa_00011_11_batch_size=64,lr=0.0003,optimizer=sgd_2025-11-29_14-41-45/error.txt
+
+Trial status: 11 ERROR | 1 RUNNING
+Current time: 2025-11-29 14:44:46. Total running time: 3min 0s
+Logical resource usage: 4.0/128 CPUs, 1.0/4 GPUs (0.0/1.0 accelerator_type:A100)
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ Trial name               status              lr     batch_size   optimizer   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│ train_tune_955aa_00010   RUNNING    0.00338379              32   adam        │
+│ train_tune_955aa_00000   ERROR      0.000239815             32   adam        │
+│ train_tune_955aa_00001   ERROR      0.00562858              64   adam        │
+│ train_tune_955aa_00002   ERROR      0.00987422             128   sgd         │
+│ train_tune_955aa_00003   ERROR      0.000580551             32   sgd         │
+│ train_tune_955aa_00004   ERROR      0.000357218             32   sgd         │
+│ train_tune_955aa_00005   ERROR      0.00693229             128   adam        │
+│ train_tune_955aa_00006   ERROR      0.00212455              64   sgd         │
+│ train_tune_955aa_00007   ERROR      0.000470091            128   sgd         │
+│ train_tune_955aa_00008   ERROR      0.00293409             128   sgd         │
+│ train_tune_955aa_00009   ERROR      0.00675505              64   sgd         │
+│ train_tune_955aa_00011   ERROR      0.000257238             64   sgd         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Trial train_tune_955aa_00010 errored after 0 iterations at 2025-11-29 14:44:46. Total running time: 3min 1s
+Error file: /tmp/ray/session_2025-11-29_14-41-37_476696_660514/artifacts/2025-11-29_14-41-45/pathmnist_resnet18_tune/driver_artifacts/train_tune_955aa_00010_10_batch_size=32,lr=0.0034,optimizer=adam_2025-11-29_14-41-45/error.txt
+
+Trial status: 12 ERROR
+Current time: 2025-11-29 14:44:46. Total running time: 3min 1s
+Logical resource usage: 4.0/128 CPUs, 1.0/4 GPUs (0.0/1.0 accelerator_type:A100)
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ Trial name               status              lr     batch_size   optimizer   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│ train_tune_955aa_00000   ERROR      0.000239815             32   adam        │
+│ train_tune_955aa_00001   ERROR      0.00562858              64   adam        │
+│ train_tune_955aa_00002   ERROR      0.00987422             128   sgd         │
+│ train_tune_955aa_00003   ERROR      0.000580551             32   sgd         │
+│ train_tune_955aa_00004   ERROR      0.000357218             32   sgd         │
+│ train_tune_955aa_00005   ERROR      0.00693229             128   adam        │
+│ train_tune_955aa_00006   ERROR      0.00212455              64   sgd         │
+│ train_tune_955aa_00007   ERROR      0.000470091            128   sgd         │
+│ train_tune_955aa_00008   ERROR      0.00293409             128   sgd         │
+│ train_tune_955aa_00009   ERROR      0.00675505              64   sgd         │
+│ train_tune_955aa_00010   ERROR      0.00338379              32   adam        │
+│ train_tune_955aa_00011   ERROR      0.000257238             64   sgd         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Number of errored trials: 12
+╭──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ Trial name                 # failures   error file                                                                                                                                                                                                               │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ train_tune_955aa_00000              1   /tmp/ray/session_2025-11-29_14-41-37_476696_660514/artifacts/2025-11-29_14-41-45/pathmnist_resnet18_tune/driver_artifacts/train_tune_955aa_00000_0_batch_size=32,lr=0.0002,optimizer=adam_2025-11-29_14-41-45/error.txt  │
+│ train_tune_955aa_00001              1   /tmp/ray/session_2025-11-29_14-41-37_476696_660514/artifacts/2025-11-29_14-41-45/pathmnist_resnet18_tune/driver_artifacts/train_tune_955aa_00001_1_batch_size=64,lr=0.0056,optimizer=adam_2025-11-29_14-41-45/error.txt  │
+│ train_tune_955aa_00002              1   /tmp/ray/session_2025-11-29_14-41-37_476696_660514/artifacts/2025-11-29_14-41-45/pathmnist_resnet18_tune/driver_artifacts/train_tune_955aa_00002_2_batch_size=128,lr=0.0099,optimizer=sgd_2025-11-29_14-41-45/error.txt  │
+│ train_tune_955aa_00003              1   /tmp/ray/session_2025-11-29_14-41-37_476696_660514/artifacts/2025-11-29_14-41-45/pathmnist_resnet18_tune/driver_artifacts/train_tune_955aa_00003_3_batch_size=32,lr=0.0006,optimizer=sgd_2025-11-29_14-41-45/error.txt   │
+│ train_tune_955aa_00004              1   /tmp/ray/session_2025-11-29_14-41-37_476696_660514/artifacts/2025-11-29_14-41-45/pathmnist_resnet18_tune/driver_artifacts/train_tune_955aa_00004_4_batch_size=32,lr=0.0004,optimizer=sgd_2025-11-29_14-41-45/error.txt   │
+│ train_tune_955aa_00005              1   /tmp/ray/session_2025-11-29_14-41-37_476696_660514/artifacts/2025-11-29_14-41-45/pathmnist_resnet18_tune/driver_artifacts/train_tune_955aa_00005_5_batch_size=128,lr=0.0069,optimizer=adam_2025-11-29_14-41-45/error.txt │
+│ train_tune_955aa_00006              1   /tmp/ray/session_2025-11-29_14-41-37_476696_660514/artifacts/2025-11-29_14-41-45/pathmnist_resnet18_tune/driver_artifacts/train_tune_955aa_00006_6_batch_size=64,lr=0.0021,optimizer=sgd_2025-11-29_14-41-45/error.txt   │
+│ train_tune_955aa_00007              1   /tmp/ray/session_2025-11-29_14-41-37_476696_660514/artifacts/2025-11-29_14-41-45/pathmnist_resnet18_tune/driver_artifacts/train_tune_955aa_00007_7_batch_size=128,lr=0.0005,optimizer=sgd_2025-11-29_14-41-45/error.txt  │
+│ train_tune_955aa_00008              1   /tmp/ray/session_2025-11-29_14-41-37_476696_660514/artifacts/2025-11-29_14-41-45/pathmnist_resnet18_tune/driver_artifacts/train_tune_955aa_00008_8_batch_size=128,lr=0.0029,optimizer=sgd_2025-11-29_14-41-45/error.txt  │
+│ train_tune_955aa_00009              1   /tmp/ray/session_2025-11-29_14-41-37_476696_660514/artifacts/2025-11-29_14-41-45/pathmnist_resnet18_tune/driver_artifacts/train_tune_955aa_00009_9_batch_size=64,lr=0.0068,optimizer=sgd_2025-11-29_14-41-45/error.txt   │
+│ train_tune_955aa_00010              1   /tmp/ray/session_2025-11-29_14-41-37_476696_660514/artifacts/2025-11-29_14-41-45/pathmnist_resnet18_tune/driver_artifacts/train_tune_955aa_00010_10_batch_size=32,lr=0.0034,optimizer=adam_2025-11-29_14-41-45/error.txt │
+│ train_tune_955aa_00011              1   /tmp/ray/session_2025-11-29_14-41-37_476696_660514/artifacts/2025-11-29_14-41-45/pathmnist_resnet18_tune/driver_artifacts/train_tune_955aa_00011_11_batch_size=64,lr=0.0003,optimizer=sgd_2025-11-29_14-41-45/error.txt  │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+

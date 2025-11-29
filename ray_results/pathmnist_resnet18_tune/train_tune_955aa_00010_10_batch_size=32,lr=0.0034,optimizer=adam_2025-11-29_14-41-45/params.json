@@ -1,0 +1,6 @@
+{
+  "batch_size": 32,
+  "epochs": 8,
+  "lr": 0.0033837905139275765,
+  "optimizer": "adam"
+}

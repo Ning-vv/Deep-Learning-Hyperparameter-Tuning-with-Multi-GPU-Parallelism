@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/global/u2/y/yuning88/rl-hyper-tuning/train_tune.py", line 97, in <module>
+    run_config=air.RunConfig(strong_path="ray_results"),
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: RunConfig.__init__() got an unexpected keyword argument 'strong_path'
+srun: error: nid001804: task 0: Exited with exit code 1
+srun: Terminating StepId=45821052.0

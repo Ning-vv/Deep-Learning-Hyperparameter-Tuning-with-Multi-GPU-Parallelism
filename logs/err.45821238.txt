@@ -1,0 +1,25 @@
+/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/impl/tuner_internal.py:144: RayDeprecationWarning: The `RunConfig` class should be imported from `ray.tune` when passing it to the Tuner. Please update your imports. See this issue for more context and migration options: https://github.com/ray-project/ray/issues/49454. Disable these warnings by setting the environment variable: RAY_TRAIN_ENABLE_V2_MIGRATION_WARNINGS=0
+  _log_deprecation_warning(
+Traceback (most recent call last):
+  File "/global/u2/y/yuning88/rl-hyper-tuning/train_tune.py", line 94, in <module>
+    tuner = tune.Tuner(
+            ^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/tuner.py", line 128, in __init__
+    self._local_tuner = TunerInternal(**kwargs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/impl/tuner_internal.py", line 168, in __init__
+    storage = StorageContext(
+              ^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/train/_internal/storage.py", line 450, in __init__
+    self.storage_filesystem, self.storage_fs_path = get_fs_and_path(
+                                                    ^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/train/_internal/storage.py", line 315, in get_fs_and_path
+    return pyarrow.fs.FileSystem.from_uri(storage_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pyarrow/_fs.pyx", line 502, in pyarrow._fs.FileSystem.from_uri
+  File "pyarrow/_fs.pyx", line 457, in pyarrow._fs.FileSystem._native_from_uri
+  File "pyarrow/error.pxi", line 155, in pyarrow.lib.pyarrow_internal_check_status
+  File "pyarrow/error.pxi", line 92, in pyarrow.lib.check_status
+pyarrow.lib.ArrowInvalid: URI has empty scheme: 'ray_results'
+srun: error: nid008572: task 0: Exited with exit code 1
+srun: Terminating StepId=45821238.0

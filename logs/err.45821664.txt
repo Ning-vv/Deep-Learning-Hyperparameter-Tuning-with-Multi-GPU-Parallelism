@@ -1,0 +1,460 @@
+/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/impl/tuner_internal.py:144: RayDeprecationWarning: The `RunConfig` class should be imported from `ray.tune` when passing it to the Tuner. Please update your imports. See this issue for more context and migration options: https://github.com/ray-project/ray/issues/49454. Disable these warnings by setting the environment variable: RAY_TRAIN_ENABLE_V2_MIGRATION_WARNINGS=0
+  _log_deprecation_warning(
+2025-11-29 14:41:41,563	INFO worker.py:1951 -- Started a local Ray instance.
+2025-11-29 14:41:45,401	INFO tune.py:253 -- Initializing Ray automatically. For cluster usage or custom Ray initialization, call `ray.init(...)` before `Tuner(...)`.
+2025-11-29 14:42:44,156	ERROR tune_controller.py:1331 -- Trial task failed for trial train_tune_955aa_00002
+Traceback (most recent call last):
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/air/execution/_internal/event_manager.py", line 110, in resolve_future
+    result = ray.get(future)
+             ^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/worker.py", line 2882, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/worker.py", line 968, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TypeError): [36mray::ImplicitFunc.train()[39m (pid=668626, ip=128.55.83.90, actor_id=5933b9106134cee14e78fea901000000, repr=train_tune)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/trainable.py", line 331, in train
+    raise skipped from exception_cause(skipped)
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/air/_internal/util.py", line 107, in run
+    self._ret = self._target(*self._args, **self._kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/function_trainable.py", line 45, in <lambda>
+    training_func=lambda: self._trainable_func(self.config),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/function_trainable.py", line 261, in _trainable_func
+    output = fn()
+             ^^^^
+  File "/global/u2/y/yuning88/rl-hyper-tuning/train_tune.py", line 76, in train_tune
+    tune.report(accuracy=val_acc, best_accuracy=best_acc)
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/train/_internal/session.py", line 663, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+TypeError: report() got an unexpected keyword argument 'accuracy'
+2025-11-29 14:42:46,735	ERROR tune_controller.py:1331 -- Trial task failed for trial train_tune_955aa_00001
+Traceback (most recent call last):
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/air/execution/_internal/event_manager.py", line 110, in resolve_future
+    result = ray.get(future)
+             ^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/worker.py", line 2882, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/worker.py", line 968, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TypeError): [36mray::ImplicitFunc.train()[39m (pid=668624, ip=128.55.83.90, actor_id=491de8b8a2d7acd39354aed901000000, repr=train_tune)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/trainable.py", line 331, in train
+    raise skipped from exception_cause(skipped)
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/air/_internal/util.py", line 107, in run
+    self._ret = self._target(*self._args, **self._kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/function_trainable.py", line 45, in <lambda>
+    training_func=lambda: self._trainable_func(self.config),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/function_trainable.py", line 261, in _trainable_func
+    output = fn()
+             ^^^^
+  File "/global/u2/y/yuning88/rl-hyper-tuning/train_tune.py", line 76, in train_tune
+    tune.report(accuracy=val_acc, best_accuracy=best_acc)
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/train/_internal/session.py", line 663, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+TypeError: report() got an unexpected keyword argument 'accuracy'
+2025-11-29 14:42:49,809	ERROR tune_controller.py:1331 -- Trial task failed for trial train_tune_955aa_00003
+Traceback (most recent call last):
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/air/execution/_internal/event_manager.py", line 110, in resolve_future
+    result = ray.get(future)
+             ^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/worker.py", line 2882, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/worker.py", line 968, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TypeError): [36mray::ImplicitFunc.train()[39m (pid=668623, ip=128.55.83.90, actor_id=0ec64c76ecc782eb5bdb739301000000, repr=train_tune)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/trainable.py", line 331, in train
+    raise skipped from exception_cause(skipped)
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/air/_internal/util.py", line 107, in run
+    self._ret = self._target(*self._args, **self._kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/function_trainable.py", line 45, in <lambda>
+    training_func=lambda: self._trainable_func(self.config),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/function_trainable.py", line 261, in _trainable_func
+    output = fn()
+             ^^^^
+  File "/global/u2/y/yuning88/rl-hyper-tuning/train_tune.py", line 76, in train_tune
+    tune.report(accuracy=val_acc, best_accuracy=best_acc)
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/train/_internal/session.py", line 663, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+TypeError: report() got an unexpected keyword argument 'accuracy'
+2025-11-29 14:42:50,638	ERROR tune_controller.py:1331 -- Trial task failed for trial train_tune_955aa_00000
+Traceback (most recent call last):
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/air/execution/_internal/event_manager.py", line 110, in resolve_future
+    result = ray.get(future)
+             ^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/worker.py", line 2882, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/worker.py", line 968, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TypeError): [36mray::ImplicitFunc.train()[39m (pid=668625, ip=128.55.83.90, actor_id=063d3fe55808476b3a9835c901000000, repr=train_tune)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/trainable.py", line 331, in train
+    raise skipped from exception_cause(skipped)
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/air/_internal/util.py", line 107, in run
+    self._ret = self._target(*self._args, **self._kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/function_trainable.py", line 45, in <lambda>
+    training_func=lambda: self._trainable_func(self.config),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/function_trainable.py", line 261, in _trainable_func
+    output = fn()
+             ^^^^
+  File "/global/u2/y/yuning88/rl-hyper-tuning/train_tune.py", line 76, in train_tune
+    tune.report(accuracy=val_acc, best_accuracy=best_acc)
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/train/_internal/session.py", line 663, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+TypeError: report() got an unexpected keyword argument 'accuracy'
+2025-11-29 14:43:41,229	ERROR tune_controller.py:1331 -- Trial task failed for trial train_tune_955aa_00005
+Traceback (most recent call last):
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/air/execution/_internal/event_manager.py", line 110, in resolve_future
+    result = ray.get(future)
+             ^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/worker.py", line 2882, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/worker.py", line 968, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TypeError): [36mray::ImplicitFunc.train()[39m (pid=670068, ip=128.55.83.90, actor_id=caaddcaa06ee6a49b186cb4001000000, repr=train_tune)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/trainable.py", line 331, in train
+    raise skipped from exception_cause(skipped)
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/air/_internal/util.py", line 107, in run
+    self._ret = self._target(*self._args, **self._kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/function_trainable.py", line 45, in <lambda>
+    training_func=lambda: self._trainable_func(self.config),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/function_trainable.py", line 261, in _trainable_func
+    output = fn()
+             ^^^^
+  File "/global/u2/y/yuning88/rl-hyper-tuning/train_tune.py", line 76, in train_tune
+    tune.report(accuracy=val_acc, best_accuracy=best_acc)
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/train/_internal/session.py", line 663, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+TypeError: report() got an unexpected keyword argument 'accuracy'
+2025-11-29 14:43:44,857	ERROR tune_controller.py:1331 -- Trial task failed for trial train_tune_955aa_00007
+Traceback (most recent call last):
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/air/execution/_internal/event_manager.py", line 110, in resolve_future
+    result = ray.get(future)
+             ^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/worker.py", line 2882, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/worker.py", line 968, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TypeError): [36mray::ImplicitFunc.train()[39m (pid=670167, ip=128.55.83.90, actor_id=1e9fe9a4415a3da1d71ebca701000000, repr=train_tune)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/trainable.py", line 331, in train
+    raise skipped from exception_cause(skipped)
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/air/_internal/util.py", line 107, in run
+    self._ret = self._target(*self._args, **self._kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/function_trainable.py", line 45, in <lambda>
+    training_func=lambda: self._trainable_func(self.config),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/function_trainable.py", line 261, in _trainable_func
+    output = fn()
+             ^^^^
+  File "/global/u2/y/yuning88/rl-hyper-tuning/train_tune.py", line 76, in train_tune
+    tune.report(accuracy=val_acc, best_accuracy=best_acc)
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/train/_internal/session.py", line 663, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+TypeError: report() got an unexpected keyword argument 'accuracy'
+2025-11-29 14:43:44,938	ERROR tune_controller.py:1331 -- Trial task failed for trial train_tune_955aa_00004
+Traceback (most recent call last):
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/air/execution/_internal/event_manager.py", line 110, in resolve_future
+    result = ray.get(future)
+             ^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/worker.py", line 2882, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/worker.py", line 968, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TypeError): [36mray::ImplicitFunc.train()[39m (pid=669961, ip=128.55.83.90, actor_id=e4aa8d6b7c9ea60689b2e39001000000, repr=train_tune)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/trainable.py", line 331, in train
+    raise skipped from exception_cause(skipped)
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/air/_internal/util.py", line 107, in run
+    self._ret = self._target(*self._args, **self._kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/function_trainable.py", line 45, in <lambda>
+    training_func=lambda: self._trainable_func(self.config),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/function_trainable.py", line 261, in _trainable_func
+    output = fn()
+             ^^^^
+  File "/global/u2/y/yuning88/rl-hyper-tuning/train_tune.py", line 76, in train_tune
+    tune.report(accuracy=val_acc, best_accuracy=best_acc)
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/train/_internal/session.py", line 663, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+TypeError: report() got an unexpected keyword argument 'accuracy'
+2025-11-29 14:43:45,335	ERROR tune_controller.py:1331 -- Trial task failed for trial train_tune_955aa_00006
+Traceback (most recent call last):
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/air/execution/_internal/event_manager.py", line 110, in resolve_future
+    result = ray.get(future)
+             ^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/worker.py", line 2882, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/worker.py", line 968, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TypeError): [36mray::ImplicitFunc.train()[39m (pid=670166, ip=128.55.83.90, actor_id=a0760a4a13a48160fde98b4301000000, repr=train_tune)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/trainable.py", line 331, in train
+    raise skipped from exception_cause(skipped)
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/air/_internal/util.py", line 107, in run
+    self._ret = self._target(*self._args, **self._kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/function_trainable.py", line 45, in <lambda>
+    training_func=lambda: self._trainable_func(self.config),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/function_trainable.py", line 261, in _trainable_func
+    output = fn()
+             ^^^^
+  File "/global/u2/y/yuning88/rl-hyper-tuning/train_tune.py", line 76, in train_tune
+    tune.report(accuracy=val_acc, best_accuracy=best_acc)
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/train/_internal/session.py", line 663, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+TypeError: report() got an unexpected keyword argument 'accuracy'
+2025-11-29 14:44:39,204	ERROR tune_controller.py:1331 -- Trial task failed for trial train_tune_955aa_00008
+Traceback (most recent call last):
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/air/execution/_internal/event_manager.py", line 110, in resolve_future
+    result = ray.get(future)
+             ^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/worker.py", line 2882, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/worker.py", line 968, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TypeError): [36mray::ImplicitFunc.train()[39m (pid=670725, ip=128.55.83.90, actor_id=8e06518d2bb38b3b97907b9d01000000, repr=train_tune)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/trainable.py", line 331, in train
+    raise skipped from exception_cause(skipped)
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/air/_internal/util.py", line 107, in run
+    self._ret = self._target(*self._args, **self._kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/function_trainable.py", line 45, in <lambda>
+    training_func=lambda: self._trainable_func(self.config),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/function_trainable.py", line 261, in _trainable_func
+    output = fn()
+             ^^^^
+  File "/global/u2/y/yuning88/rl-hyper-tuning/train_tune.py", line 76, in train_tune
+    tune.report(accuracy=val_acc, best_accuracy=best_acc)
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/train/_internal/session.py", line 663, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+TypeError: report() got an unexpected keyword argument 'accuracy'
+2025-11-29 14:44:42,983	ERROR tune_controller.py:1331 -- Trial task failed for trial train_tune_955aa_00009
+Traceback (most recent call last):
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/air/execution/_internal/event_manager.py", line 110, in resolve_future
+    result = ray.get(future)
+             ^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/worker.py", line 2882, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/worker.py", line 968, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TypeError): [36mray::ImplicitFunc.train()[39m (pid=670800, ip=128.55.83.90, actor_id=12636565ce0dfd497e347e5b01000000, repr=train_tune)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/trainable.py", line 331, in train
+    raise skipped from exception_cause(skipped)
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/air/_internal/util.py", line 107, in run
+    self._ret = self._target(*self._args, **self._kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/function_trainable.py", line 45, in <lambda>
+    training_func=lambda: self._trainable_func(self.config),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/function_trainable.py", line 261, in _trainable_func
+    output = fn()
+             ^^^^
+  File "/global/u2/y/yuning88/rl-hyper-tuning/train_tune.py", line 76, in train_tune
+    tune.report(accuracy=val_acc, best_accuracy=best_acc)
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/train/_internal/session.py", line 663, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+TypeError: report() got an unexpected keyword argument 'accuracy'
+2025-11-29 14:44:43,691	ERROR tune_controller.py:1331 -- Trial task failed for trial train_tune_955aa_00011
+Traceback (most recent call last):
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/air/execution/_internal/event_manager.py", line 110, in resolve_future
+    result = ray.get(future)
+             ^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/worker.py", line 2882, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/worker.py", line 968, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TypeError): [36mray::ImplicitFunc.train()[39m (pid=670801, ip=128.55.83.90, actor_id=f322db80ec9f5385d079cdcf01000000, repr=train_tune)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/trainable.py", line 331, in train
+    raise skipped from exception_cause(skipped)
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/air/_internal/util.py", line 107, in run
+    self._ret = self._target(*self._args, **self._kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/function_trainable.py", line 45, in <lambda>
+    training_func=lambda: self._trainable_func(self.config),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/function_trainable.py", line 261, in _trainable_func
+    output = fn()
+             ^^^^
+  File "/global/u2/y/yuning88/rl-hyper-tuning/train_tune.py", line 76, in train_tune
+    tune.report(accuracy=val_acc, best_accuracy=best_acc)
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/train/_internal/session.py", line 663, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+TypeError: report() got an unexpected keyword argument 'accuracy'
+2025-11-29 14:44:46,699	ERROR tune_controller.py:1331 -- Trial task failed for trial train_tune_955aa_00010
+Traceback (most recent call last):
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/air/execution/_internal/event_manager.py", line 110, in resolve_future
+    result = ray.get(future)
+             ^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/worker.py", line 2882, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/_private/worker.py", line 968, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(TypeError): [36mray::ImplicitFunc.train()[39m (pid=670802, ip=128.55.83.90, actor_id=a502bf7bc92001927b78722101000000, repr=train_tune)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/trainable.py", line 331, in train
+    raise skipped from exception_cause(skipped)
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/air/_internal/util.py", line 107, in run
+    self._ret = self._target(*self._args, **self._kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/function_trainable.py", line 45, in <lambda>
+    training_func=lambda: self._trainable_func(self.config),
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/trainable/function_trainable.py", line 261, in _trainable_func
+    output = fn()
+             ^^^^
+  File "/global/u2/y/yuning88/rl-hyper-tuning/train_tune.py", line 76, in train_tune
+    tune.report(accuracy=val_acc, best_accuracy=best_acc)
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/train/_internal/session.py", line 663, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+TypeError: report() got an unexpected keyword argument 'accuracy'
+2025-11-29 14:44:46,774	INFO tune.py:1009 -- Wrote the latest version of all result files and experiment state to '/global/u2/y/yuning88/rl-hyper-tuning/ray_results/pathmnist_resnet18_tune' in 0.0724s.
+2025-11-29 14:44:46,779	ERROR tune.py:1037 -- Trials did not complete: [train_tune_955aa_00000, train_tune_955aa_00001, train_tune_955aa_00002, train_tune_955aa_00003, train_tune_955aa_00004, train_tune_955aa_00005, train_tune_955aa_00006, train_tune_955aa_00007, train_tune_955aa_00008, train_tune_955aa_00009, train_tune_955aa_00010, train_tune_955aa_00011]
+2025-11-29 14:44:46,833	WARNING experiment_analysis.py:558 -- Could not find best trial. Did you pass the correct `metric` parameter?
+Traceback (most recent call last):
+  File "/global/u2/y/yuning88/rl-hyper-tuning/train_tune.py", line 109, in <module>
+    best = results.get_best_result(metric="accuracy", mode="max")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/common/software/nersc9/pytorch/2.8.0/lib/python3.12/site-packages/ray/tune/result_grid.py", line 161, in get_best_result
+    raise RuntimeError(error_msg)
+RuntimeError: No best trial found for the given metric: accuracy. This means that no trial has reported this metric, or all values reported for this metric are NaN. To not ignore NaN values, you can set the `filter_nan_and_inf` arg to False.
+srun: error: nid008633: task 0: Exited with exit code 1
+srun: Terminating StepId=45821664.0
